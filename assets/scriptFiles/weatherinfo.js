@@ -75,3 +75,4 @@ async function currentWeather(loc) {
 
 }
 
+// Test
