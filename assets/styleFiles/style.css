@@ -18,12 +18,27 @@ list-style: none;
 }
 
 .jumbotron {
-  text-align: center;
-  background-color:  #53c4aa;
+  text-align: left;
+  background-color:  #5b6f9b;
+  background-image: cover, no-repeat;
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
-  
+  text-shadow: 2px 2px #151418;
+  color: azure;
+  max-height 50px; ;
+}
+.hero{
+  /*background-image: url(../images/DelGapHero1.jpg); */
+  background-image: cover;
+  background-repeat: no-repeat;
+  background-size: 100% 50;
+  background-position: center;
+
+}
+
+#container1.{
+
 }
 
 #container3{
@@ -38,12 +53,8 @@ list-style: none;
 
 }
 
-./assets/styleFiles/style.css {
-  white-space: pre-wrap;
-}
-
 #response1{
-  border: 3px solid rgb(7, 10, 7;
+  border: 3px solid rgb(7, 10, 7);
 }
 
 .time-block {
@@ -82,7 +93,7 @@ list-style: none;
   transition: all 0.3s ease-in-out;
 }
 
-.checkboxes ul, .checkboxes li,{
+.checkboxes ul {
   margin: 0;
   padding:0;
   list-style:none;
@@ -91,6 +102,7 @@ list-style: none;
 .checkboxs li{
     display:inline-block;
     width:33.33%;
+    list-style:none;
 }
 
 .hide {
