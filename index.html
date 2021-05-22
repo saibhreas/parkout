@@ -10,13 +10,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/styleFiles/style.css">
+
+    <link rel="stylesheet" href="assets/styleFiles/combo.css">
+    <link rel="stylesheet" href=".assets/styleFiles/style.css">
     <title>ParksOut</title>
 </head>
 
 <body>
   <header>
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid jumbotron-parkout-" style=background-image:url(https://www.nps.gov/common/uploads/grid_builder/greg/crop16_9/4EC37E28-1DD8-B71B-0B553480E6AACBF8.jpg?width=950&quality=90&mode=crop)></div>
       <div class="container">
         <h1 class="display-4"><bold><em>Park Out</em></bold></h1>
         <p class="lead">A place to see if it's good for a walk in the park</p>
@@ -25,7 +27,7 @@
   </header>
   <main>
     <section id="container1" class="container">
-      <div class="row">
+      <div class="row card img-fluid"><!--hero image here-->
         <div class="col-6">
           <h2>Where would like to go?</h2>
           <p>
@@ -33,47 +35,44 @@
           </p>
           <p>Choose from the drop down menu the park you are interseted in.
           </p>
-          <p>Then choose what information you need , like the current weather, a guide to the restrooms, or whether
-            there is hydration available.
+          <p>Then choose what information you need , like the current weather, a map, or whether
+            there is an admission fee.
           </p>
           <h3><em>Then Take a Hike!</em></h3>
         </div>
         <div class="col-6">
-          <img src="https://picsum.photos/200/200">
         </div>
       </div>
     </section>
+            <!--Container wher park list is genreated and applied to page-->
     <section id="container2" class="container">
       <div class="row">
         <div class="col-6 col-md-4">
-          <img src="https://picsum.photos/200/200">
         </div>
         <div class="col-6 col-md-4">
           <div class="card">
-            <div class="card-header">
-              Featured
+            <div id="pick-a-park" class="card-header">
             </div>
-            <div class="card-body">
               <h5 class="card-title">New Jersey's Parks</h5>
               <p class="card-text">Choose a park from the frop down menu</p>
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="search-park" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">Go Somewhere</button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
+              <div class="card-body">
+                <h5 class="card-title">New Jersey's National Parks</h5>
+                <p class="card-text">Choose a park from the frop down menu</p>
+                <div class="col-2" id="btn-container1"></div>
+                  <button type="submit" class="btn bg-info" id="get-park-names">Pick a NJ Park</button>
+                  <button type="button" class="btn bg-info" id=id="park-list">Pick a NJ Park</button>
                 </div>
               </div>
-            </div>
           </div>
         </div>
+
         <div class="col-6 col-md-4">
-          <img src="https://picsum.photos/200/200">
+          <!-- empty container for future applicaiton if needed-->
         </div>
       </div>
     </section>
 
+            <!--Check Box   user choice-->
     <section id="container4" class="container">
       <div class="card">
         <div class="card-body">
@@ -93,16 +92,16 @@
                   <label for="cb3">Alerts</label>
                 </li>
                 <li>
-                  <input type="checkbox" id="temperature" value="temperature" />
-                  <label for="cb4">Temperature</label>
+                  <input type="checkbox" id="weather" value="weather" />
+                  <label for="cb4">Weather</label>
                 </li>
                 <li>
                   <input type="checkbox" id="wind-speed" value="wind-speed" />
-                  <label for="cb5">Wind Speed
+                  <label for="cb5">
                 </li>
                 <li>
                   <input type="checkbox" id="humidity" value="humidity" />
-                  <label for="cb6">Humidity</label>
+                  <label for="cb6"></label>
                 </li>
               </ul>
             </fieldset>
@@ -111,24 +110,20 @@
         </div>
       </div>
     </section>
+
+            <!--container for weather forcast -->
     <section id="container4" class="container">
-      <div class="row">
-        <div class="col-6">
-          <form>
-            <div class ="form-group weather-info">
-              <label id="weather-repos-container" for="Temp space for Alex: ">Example textarea </label>
-              <textarea class="form-control" id="result-wrapper" rows="5"></textarea>
-            </div>
-          </form>          
-        </div>
-        <div class="col-6">
-          <form>
-            <div class ="form-group weather-info">
-              <label id="weather-repos-container" for="Temp space for Alex: ">Example textarea </label>
-              <textarea class="form-control" id="geometric-data" rows="5"></textarea>
-            </div>
-          </form>          
-        </div>
+      <div class="row card col-md-9">
+        <div data-index="0" id="current-weather-container">
+        </div>  
+      </div>
+
+
+            <!--Container for Map and park info-->
+      <div class="row card col-md-9">
+        <div data-index="0" id="current-weather-container">
+          <div id="map"></div>
+        </div>  
       </div>
     </section>
   </main>

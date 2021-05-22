@@ -13,6 +13,17 @@ var MAPQ_API_KEY = "yQcB9Koy5KFxIcWM6GPCjCJ132aiYGhh";
 
 // hours amenities alerts
 
+var retreived = {a, b, c, d, e, f};
+var parkList= $('park-list>');
+  function testPlacement(retreived){
+    for (var i = 0; retreived.length < 6; i++) {
+      parkList= retreive[i];
+      console.log(parkList);
+    };
+  };
+  testPlacement();
+
+
 // TODO declare & troubleshoot
 
 
