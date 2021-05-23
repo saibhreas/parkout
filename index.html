@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Enter your description here" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
-    <link rel="stylesheet" href="assets/styleFiles/combo.css">
-    <link rel="stylesheet" href=".assets/styleFiles/style.css">
-    <title>ParksOut</title>
+<link rel="stylesheet" href="assets/styleFiles/combo.css">
+<link rel="stylesheet" href="./assets/styleFiles/style.css">
+<title>Title</title>
 </head>
-
 <body>
   <header>
-    <div class="jumbotron jumbotron-fluid jumbotron-parkout-" style=background-image:url(https://www.nps.gov/common/uploads/grid_builder/greg/crop16_9/4EC37E28-1DD8-B71B-0B553480E6AACBF8.jpg?width=950&quality=90&mode=crop)></div>
-      <div class="container">
-        <h1 class="display-4"><bold><em>Park Out</em></bold></h1>
-        <p class="lead">A place to see if it's good for a walk in the park</p>
-      </div>
+    <div class="jumbotron jumbotron-fluid jumbotron-weather">
+        <div class="container">
+            <h1 class="display-4" style><strong><em></em>Park Out</em></strong></h1>
+            <p class="lead"><em>The place to check out before you head out!</em></p>
+        </div>
     </div>
   </header>
-  <main>
-    <section id="container1" class="container">
-      <div class="row card img-fluid"><!--hero image here-->
-        <div class="col-6">
+
+  <main class=" container col-12">
+    <section id="container1" class="container row">
+      <div class="card col-5">
+        <img src="./assets/img/ForsythePreserve3.jpg" alt="Great Blue Herron on">
+      </div>
+      <div class="card img-fluid"><!--hero image here-->
+        <div class="col"> 
           <h2>Where would like to go?</h2>
           <p>
             <bold>Park Out</bold> will help ypu pick the right spot in New Jersey for you r walk in the park.
@@ -39,8 +39,6 @@
             there is an admission fee.
           </p>
           <h3><em>Then Take a Hike!</em></h3>
-        </div>
-        <div class="col-6">
         </div>
       </div>
     </section>
@@ -55,14 +53,10 @@
             </div>
               <h5 class="card-title">New Jersey's Parks</h5>
               <p class="card-text">Choose a park from the frop down menu</p>
-              <div class="card-body">
-                <h5 class="card-title">New Jersey's National Parks</h5>
-                <p class="card-text">Choose a park from the frop down menu</p>
-                <div class="col-2" id="btn-container1"></div>
-                  <button type="submit" class="btn bg-info" id="get-park-names">Pick a NJ Park</button>
-                  <button type="button" class="btn bg-info" id=id="park-list">Pick a NJ Park</button>
-                </div>
-              </div>
+              <div class="col-2" id="btn-container1"></div>
+              <button type="submit" class="btn bg-info" id="get-park-names">Pick a NJ Park</button>
+              <h3 class="subtitle"><span   id="park-list"></span></h2>
+            </div>
           </div>
         </div>
 
@@ -127,15 +121,11 @@
       </div>
     </section>
   </main>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-    
-    
-    <!-- TODO: LINK ALL SCRIPT SOURCES CHRONOLOGICALLY -->
-     <script src="./assets/scriptFiles/weatherinfo.js"></script>
-    <script src="./assets/scriptFiles/logic.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.js"></script>
+<script src="./assets/scriptFiles/logic.js"></script>
 </body>
+</html> <!-- commenting to initate changes main will not let me clean up files that need to be deleted from system-->
 
-</html>
+ 
