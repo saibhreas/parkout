@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="App that pools up to date data on National Parks in New Jersey"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="App that pools up to date data on National Parks in New Jersey" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
 
-<link rel="stylesheet" href="./assets/styleFiles/style.css">
-<title>Park Out</title>
+  <link rel="stylesheet" href="./assets/styleFiles/style.css">
+  <title>Park Out</title>
 </head>
+
 <body>
-  <main class = container">
+  <main>
     <header class="header">
-          <!-- Background image -->
+      <!-- Background image -->
       <div class="p-5  header"
         style="background-image: url('./assets/img/DelGapHeader2.png');height: 100vh; background-size: cover;">
-        <div >
+        <div>
           <div class="d-flex justify-content-left align-items-center h-100">
-            <div >
+            <div>
               <h1 class="mb-3">Park Out</h1>
               <h4 class="mb-3">The place to check out before you head out!</h4>
             </div>
@@ -28,36 +30,37 @@
 
           <section id="container1" class="container row">
             <div class="card col-5">
-               
-                <h2>Where would like to go?</h2>
-                <p>
-                  <bold>Park Out</bold> will help ypu pick the right spot in New Jersey for you r walk in the park.
-                </p>
-                <p>Choose from the drop down menu the park you are interseted in.
-                </p>
-                <p>Then choose what information you need , like the current weather, a map, or whether
-                  there is an admission fee.
-                </p>
-                <h3><em>Then Take a Hike!</em></h3>
-              
+
+              <h2>Where would like to go?</h2>
+              <p>
+                <bold>Park Out</bold> will help ypu pick the right spot in New Jersey for you r walk in the park.
+              </p>
+              <p>Choose from the drop down menu the park you are interseted in.
+              </p>
+              <p>Then choose what information you need , like the current weather, a map, or whether
+                there is an admission fee.
+              </p>
+              <h3><em>Then Take a Hike!</em></h3>
+
             </div>
           </section>
 
         </div>
       </div>
-       
-       
+
+
     </header>
-    
+
   </main>
 
-  <main class=" container col-12">
+  <main class="col-12">
     <section id="container1" class="container row">
       <div class="card col-4">
         <img src="./assets/img/ForsythePreserve3.jpg" alt="Great Blue Herron on">
       </div>
-      <div class="card img-fluid"><!--hero image here-->
-        <div class="col"> 
+      <div class="card img-fluid">
+        <!--hero image here-->
+        <div class="col">
           <h2>Where would like to go?</h2>
           <p>
             <bold>Park Out</bold> will help ypu pick the right spot in New Jersey for you r walk in the park.
@@ -71,7 +74,7 @@
         </div>
       </div>
     </section>
-            <!--Container wher park list is genreated and applied to page-->
+    <!--Container wher park list is genreated and applied to page-->
     <section id="container2" class="container">
       <div class="row">
         <div class="col-6 col-md-4">
@@ -82,9 +85,9 @@
             </div>
             <h5 class="card-title">New Jersey’s Parks</h5>
             <p class="card-text">Choose a park from the frop down menu</p>
-            <button type="submit" class="btn btn-secondary dropdown-toggle" id="search-park"
-                onclick="npsApiCall('NJ')" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                id="get-park-names">Pick a NJ Park</button>
+            <button type="submit" class="btn btn-secondary dropdown-toggle" id="search-park" onclick="npsApiCall('NJ')"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="get-park-names">Pick a NJ
+              Park</button>
             <div class="dropdown-menu" id="myList" aria-labelledby="dropdownMenuButton">
             </div>
           </div>
@@ -92,61 +95,66 @@
       </div>
     </section>
 
-            <!--Check Box   user choice-->
+    <!--Check Box   user choice-->
     <section id="container4" class="container">
       <div class="card">
         <div class="card-body">
-             <fieldset class="group" onsubmit="return onSubmitData(event)">
-              <legend>What information can we help you with?</legend>
-              <ul class="checkbox">
-                <li>
-                  <input type="checkbox" id="admission" value="admisson" />
-                  <label for="cb1">Admission</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="activities value="activities" />
-                  <label for="cb2">Activities</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="fees" value="fees" />
-                  <label for="cb3">Alerts</label>
-                </li>
-                <li>
-                  <input type="checkbox" id="weather" value="weather" />
-                  <label for="cb4">Weather</label>
-                </li>
+          <fieldset class="group" onsubmit="return onSubmitData(event)">
+            <legend>What information can we help you with?</legend>
+            <ul class="checkbox">
+              <li>
+                <input type="checkbox" id="admission" value="admisson" />
+                <label for="cb1">Admission</label>
+              </li>
+              <li>
+                <input type="checkbox" id="activities" value="activities" />
+                <label for="cb2">Activities</label>
+              </li>
+              <li>
+                <input type="checkbox" id="fees" value="fees" />
+                <label for="cb3">Fees</label>
+              </li>
+              <li>
+                <input type="checkbox" id="weather" value="weather" />
+                <label for="cb4">Weather</label>
+              </li>
 
-              </ul>
-            </fieldset>
-            <button class="btn btn-block btn-info">Submit Form</button>
+            </ul>
+          </fieldset>
+          <button class="btn btn-block btn-info" onclick="clickSubmit()" id="hide-weather">Submit Form</button>
           </form>
         </div>
       </div>
     </section>
 
-            <!--container for weather forcast -->
-    <section id="container4" class="container">
+    <!--container for Park Info -->
+    <section id="divInformation" class="container">
       <div class="row card col-md-9">
-        <div data-index="0" id="current-weather-container">
-        </div>  
+        <span id="spancontact" style="display: none;">Phone Number :- <span id="spanphoneNumber"></span>
+          <br>
+          Email :- <span id="spanEmail"></span>
+        </span>
+        <br>
+        <span id="spanActivity"></span>
+        <br>
+        <span id="spanFees"></span>
       </div>
 
 
-            <!--Container for Map and park info-->
+      <!--Container for Weather Info-->
       <div class="row card col-md-9">
         <div data-index="0" id="current-weather-container">
           <div id="map"></div>
-        </div>  
+        </div>
       </div>
     </section>
-    
-  </main>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.js"></script>
-<script src="./assets/scriptFiles/logic.js"></script>
-</body>
-</html> <!-- -->
 
- 
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.js"></script>
+  <script src="./assets/scriptFiles/logic.js"></script>
+</body>
+
+</html> <!-- -->
