@@ -15,40 +15,32 @@ body {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color:hsl(32, 50%, 90%);
+  
+  
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   box-shadow: 10px 10px 5px #aaaaaa;
 }
+
+
 .card-search{
   border:#4bacb8;
 }
-.jumbotron h1{
-  text-shadow: 2px 2px #151418;
-}
 
-.jumbotron {
+
+.header {
   text-align: left;
-  background-color:  #5b6f9b;
+  
   color: rgb(187, 209, 240);
   border-radius: 5;
   border-bottom: 5px solid rgb(24, 23, 21);
   text-shadow: 2px 2px #151418;
-  
-  min-height: 400px;
+   
 }
 
-.jumbotron h1{
-  margin-top:10%;
 
-}
-.jumbotron-weather {
-  background-image: url(../img/DelGapHeader.jpg);
-  max-width: 100%;
-  background-size: cover;
-  
-}
+
 
 .bgimage {
   max-height:600 ;
@@ -58,11 +50,11 @@ body {
   background-position: center;
   background-size:cover;
   background-attachment: fixed;
-  color:#fff;
+  
 
 }
 .bgimage h5 {
-  color:white;
+  
   text-shadow:2px 2px #333;
 }
 

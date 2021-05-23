@@ -1,33 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="Description" content="Enter your description here" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="App that pools up to date data on National Parks in New Jersey"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
 
 <link rel="stylesheet" href="./assets/styleFiles/style.css">
-<title>Title</title>
+<title>Park Out</title>
 </head>
 <body>
-  <header>
-    <div class="jumbotron jumbotron-fluid jumbotron-weather">
-        <div class="container">
-            <h1 class="display-4" style><strong><em></em>Park Out</em></strong></h1>
-            <p class="lead"><em>The place to check out before you head out!</em></p>
+  <main class = container">
+    <header class="header">
+          <!-- Background image -->
+      <div class="p-5  header"
+        style="background-image: url('./assets/img/DelGapHeader2.png');height: 100vh; background-size: cover;">
+        <div >
+          <div class="d-flex justify-content-left align-items-center h-100">
+            <div >
+              <h1 class="mb-3">Park Out</h1>
+              <h4 class="mb-3">The place to check out before you head out!</h4>
+            </div>
+          </div><!-- Background image -->
+
+          <section id="container1" class="container row">
+            <div class="card col-5">
+               
+                <h2>Where would like to go?</h2>
+                <p>
+                  <bold>Park Out</bold> will help ypu pick the right spot in New Jersey for you r walk in the park.
+                </p>
+                <p>Choose from the drop down menu the park you are interseted in.
+                </p>
+                <p>Then choose what information you need , like the current weather, a map, or whether
+                  there is an admission fee.
+                </p>
+                <h3><em>Then Take a Hike!</em></h3>
+              
+            </div>
+          </section>
+
         </div>
-    </div>
-  </header>
+      </div>
+       
+       
+    </header>
+    
+  </main>
 
   <main class=" container col-12">
     <section id="container1" class="container row">
-      <div class="card col-5">
+      <div class="card col-4">
         <img src="./assets/img/ForsythePreserve3.jpg" alt="Great Blue Herron on">
       </div>
       <div class="card img-fluid"><!--hero image here-->
@@ -54,21 +80,15 @@
           <div class="card">
             <div id="pick-a-park" class="card-header">
             </div>
-            <h5 class="card-title">New Jersey's Parks</h5>
+            <h5 class="card-title">New Jersey’s Parks</h5>
             <p class="card-text">Choose a park from the frop down menu</p>
-            <div class="card-body">
-              <h5 class="card-title">New Jersey's National Parks</h5>
-              <p class="card-text">Choose a park from the frop down menu</p>
-              <button type="submit" class="btn btn-secondary dropdown-toggle" id="search-park" onclick="npsApiCall('NJ')" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="get-park-names">Pick a NJ Park</button>
-              <div class="dropdown-menu" id="myList" aria-labelledby="dropdownMenuButton">
+            <button type="submit" class="btn btn-secondary dropdown-toggle" id="search-park"
+                onclick="npsApiCall('NJ')" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                id="get-park-names">Pick a NJ Park</button>
+            <div class="dropdown-menu" id="myList" aria-labelledby="dropdownMenuButton">
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="col-6 col-md-4">
-        <!-- empty container for future applicaiton if needed-->
-      </div>
       </div>
     </section>
 
@@ -76,36 +96,29 @@
     <section id="container4" class="container">
       <div class="card">
         <div class="card-body">
-          <fieldset class="group" onsubmit="return onSubmitData(event)">
-            <legend>What information can we help you with?</legend>
-            <ul class="checkbox">
-              <li>
-                <input type="checkbox" id="admission" value="admisson" />
-                <label for="cb1">Admission</label>
-              </li>
-              <li>
-                <input type="checkbox" id="hours value=" hours" />
-                <label for="cb2">Hours</label>
-              </li>
-              <li>
-                <input type="checkbox" id="notices" value="notices" />
-                <label for="cb3">Alerts</label>
-              </li>
-              <li>
-                <input type="checkbox" id="weather" value="weather" />
-                <label for="cb4">Weather</label>
-              </li>
-              <li>
-                <input type="checkbox" id="wind-speed" value="wind-speed" />
-                <label for="cb5">
-              </li>
-              <li>
-                <input type="checkbox" id="humidity" value="humidity" />
-                <label for="cb6"></label>
-              </li>
-            </ul>
-          </fieldset>
-          <button class="btn btn-block btn-info">Submit Form</button>
+             <fieldset class="group" onsubmit="return onSubmitData(event)">
+              <legend>What information can we help you with?</legend>
+              <ul class="checkbox">
+                <li>
+                  <input type="checkbox" id="admission" value="admisson" />
+                  <label for="cb1">Admission</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="activities value="activities" />
+                  <label for="cb2">Activities</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="fees" value="fees" />
+                  <label for="cb3">Alerts</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="weather" value="weather" />
+                  <label for="cb4">Weather</label>
+                </li>
+
+              </ul>
+            </fieldset>
+            <button class="btn btn-block btn-info">Submit Form</button>
           </form>
         </div>
       </div>
@@ -126,6 +139,7 @@
         </div>
       </div>
     </section>
+    
   </main>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.js"></script>
