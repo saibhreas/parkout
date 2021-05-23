@@ -5,58 +5,48 @@ $(document).ready(function () {
     // todo: global variables
 
     var hours = $("#hours").on("click",);
-
     var amenities = $("#amenities").on("click",);
-
     var alerts = $("#alerts").on("click",);
-    //button click 
     var MAPQ_API_KEY = "yQcB9Koy5KFxIcWM6GPCjCJ132aiYGhh";
     var getParkBtnEl = $('#get-park-names');
-    var parkList = $('#park-list')
+    var parkList = $('#park-list')``
     var timeDispEl = $("#time-display");
-    var apiKey = "653094733b20fc02dc6f1e6e6b8bf37e";
-
-    // TODO declare & troubleshoot
-    // TODO: GLOBAL VARIABLES
+    var openWeatherApiKey = "653094733b20fc02dc6f1e6e6b8bf37e";
 
     // *? ALL ABOVE ARE ORIGINAL TO PARKOUT
 
-
-    // *! COMPLETED gets selected city CURRENT weather
-
-    // function getCurrentPark(event) {
-    //     event.preventDefault();
-    //     var city = $("#city-name").val();
-    //     console.log("current searched was: ", city);
-    //     $("#chosen-city").text(city);
-    //     $("#current-city").text(city);
-    //     var currentUrlApi = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
-    //     console.log("current day communication succeed: ", currentUrlApi);
-    //     $.ajax({
-    //         url: currentUrlApi,
-    //         success: function (response) {
-    //             console.log("object extracted: ", response);
-    //             console.log("attempting to pull the json: ", response.weather[0].icon);
-    //             console.log("this is the lat, then lon: ", response.coord.lat, response.coord.lon);
-    //             getFiveDayWeatherApi(response.coord.lat, response.coord.lon);
-    //         },
-    //         error: function (xhr, status, error) {
-    //             console.log("status: ", status)
-    //             console.log("error: ", error)
-    //         },
-    //         complete: function (xhr, status) {
-    //             console.log("complete: ", status)
-    //         }
-    //     })
-    // };
-    // TODO must return null if city is invalid
+    function getCurrentWeather(event) {
+        event.preventDefault();
+        var city = $("#city-name").val();
+        console.log("current searched was: ", city);
+        $("#chosen-city").text(city);
+        $("#current-city").text(city);
+        var currentUrlApi = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+        console.log("current day communication succeed: ", currentUrlApi);
+        $.ajax({
+            url: currentUrlApi,
+            success: function (response) {
+                console.log("object extracted: ", response);
+                console.log("attempting to pull the json: ", response.weather[0].icon);
+                console.log("this is the lat, then lon: ", response.coord.lat, response.coord.lon);
+                getFiveDayWeatherApi(response.coord.lat, response.coord.lon);
+            },
+            error: function (xhr, status, error) {
+                console.log("status: ", status)
+                console.log("error: ", error)
+            },
+            complete: function (xhr, status) {
+                console.log("complete: ", status)
+            }
+        })
+    };
 
 
     // *! COMPLETED gets 5 day weather forecast
     function getFiveDayWeatherApi(lat, lon) {
         var city = $("#city-name").val();
         console.log("current searched was: ", city)
-        var fiveDayUrlApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,current,alerts&units=imperial&appid=${apiKey}`
+        var fiveDayUrlApi = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,minutely,current,alerts&units=imperial&appid=${openWeatherApiKey}`
         console.log("fivedayURL: ", fiveDayUrlApi)
         $.ajax({
             url: fiveDayUrlApi,
@@ -98,22 +88,11 @@ $(document).ready(function () {
             }
         })
     };
-    // *! COMPLETED time display function
-    function displayTime() {
-        var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
-        timeDispEl.text(rightNow);
-        var present = rightNow.substring(0, 6);
-        console.log(present)
-    };
 
-
-    
     
     
 
     function npsApiCall(parkNJ) {
-
-
         var npsKey = "aKdQbl5YRDOdOcAzaiDfbacSBby5NQWEU8s5Mi5D";
         var npsUrl = `https://developer.nps.gov/api/v1/parks?stateCode=${parkNJ}&api_key=${npsKey}`
         console.log("my park list: ", npsUrl);
@@ -150,8 +129,15 @@ $(document).ready(function () {
         })
     };
     
+    // *! COMPLETED time display function
+    function displayTime() {
+        var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
+        timeDispEl.text(rightNow);
+        var present = rightNow.substring(0, 6);
+        console.log(present)
+    };
 
-
+    
     //*! LAT & LONGITUDE
     function mapQuestApiCall(x, y) {
         console.log(x, y)
