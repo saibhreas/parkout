@@ -24,31 +24,31 @@ $(document).ready(function () {
 
     // *! COMPLETED gets selected city CURRENT weather
 
-    function getCurrentPark(event) {
-        event.preventDefault();
-        var city = $("#city-name").val();
-        console.log("current searched was: ", city);
-        $("#chosen-city").text(city);
-        $("#current-city").text(city);
-        var currentUrlApi = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
-        console.log("current day communication succeed: ", currentUrlApi);
-        $.ajax({
-            url: currentUrlApi,
-            success: function (response) {
-                console.log("object extracted: ", response);
-                console.log("attempting to pull the json: ", response.weather[0].icon);
-                console.log("this is the lat, then lon: ", response.coord.lat, response.coord.lon);
-                getFiveDayWeatherApi(response.coord.lat, response.coord.lon);
-            },
-            error: function (xhr, status, error) {
-                console.log("status: ", status)
-                console.log("error: ", error)
-            },
-            complete: function (xhr, status) {
-                console.log("complete: ", status)
-            }
-        })
-    };
+    // function getCurrentPark(event) {
+    //     event.preventDefault();
+    //     var city = $("#city-name").val();
+    //     console.log("current searched was: ", city);
+    //     $("#chosen-city").text(city);
+    //     $("#current-city").text(city);
+    //     var currentUrlApi = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+    //     console.log("current day communication succeed: ", currentUrlApi);
+    //     $.ajax({
+    //         url: currentUrlApi,
+    //         success: function (response) {
+    //             console.log("object extracted: ", response);
+    //             console.log("attempting to pull the json: ", response.weather[0].icon);
+    //             console.log("this is the lat, then lon: ", response.coord.lat, response.coord.lon);
+    //             getFiveDayWeatherApi(response.coord.lat, response.coord.lon);
+    //         },
+    //         error: function (xhr, status, error) {
+    //             console.log("status: ", status)
+    //             console.log("error: ", error)
+    //         },
+    //         complete: function (xhr, status) {
+    //             console.log("complete: ", status)
+    //         }
+    //     })
+    // };
     // TODO must return null if city is invalid
 
 
@@ -62,16 +62,16 @@ $(document).ready(function () {
             url: fiveDayUrlApi,
             success: function (response) {
                 console.log("object extracted: ", response);
-                console.log(response.daily[0].dt);
+                // console.log(response.daily[0].dt);
                 for (var i = 0; i < 6; i++) {
                     var weather = response.daily[i].weather[0].description;
                     var icon = response.daily[i].weather[0].icon;
                     var temp = response.daily[i].temp.day;
                     var uvi = response.daily[i].uvi;
                     var iconImage = $("<img>").attr("src", `http://openweathermap.org/img/wn/${icon}@2x.png`);
-                    console.log(iconImage)
-                    console.log(response.daily[i].temp.day);
-                    console.log("div" + '[data-index="' + i + '"]')
+                    // console.log(iconImage)
+                    // console.log(response.daily[i].temp.day);
+                    // console.log("div" + '[data-index="' + i + '"]')
                     $("div" + '[data-index="' + i + '"]').append(
                         " weather: " + weather,
                         iconImage, "<br>",
@@ -106,15 +106,10 @@ $(document).ready(function () {
         console.log(present)
     };
 
-    $(searchParkBtnEl).click(function () {
-        $("#current-park-container").empty();
-    });
 
-    setInterval(displayTime, 1000);
-    searchParkBtnEl.on("click", getCurrentWeather);
-
-
-
+    
+    
+    
 
     function npsApiCall(parkNJ) {
 
@@ -140,11 +135,10 @@ $(document).ready(function () {
                     console.log(activitiesP);
                     var feesP = response.data[i].entranceFees[0].cost;
                     console.log(feesP);
-
+                    
                     $('#myList').append('<a class="dropdown-item" href="#">' + nameP + '</a>')
 
                 }
-
             },
             error: function (xhr, status, error) {
                 console.log("status: ", status)
@@ -155,7 +149,7 @@ $(document).ready(function () {
             }
         })
     };
-
+    
 
 
     //*! LAT & LONGITUDE
@@ -165,4 +159,5 @@ $(document).ready(function () {
         console.log(mapUrl)
     };
 
+    setInterval(displayTime, 1000);
 });
