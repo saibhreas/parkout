@@ -4,104 +4,26 @@ $(document).ready(function () {
     // *! CONFIRMED VARIABLES
     // todo: global variables
 
-<<<<<<< HEAD
-// *! CONFIRMED VARIABLES
-// todo: global variables
-
-var hours = $("#hours").on("click",);
-console.log(hours);
-var amenities = $("#amenities").on("click",);
-console.log(amenities);
-var alerts = $("#alerts").on("click",);
-console.log(alerts);
-var ContainerEl = document.querySelector('#container');
-var MAPQ_API_KEY = "yQcB9Koy5KFxIcWM6GPCjCJ132aiYGhh";
-
-// hours amenities alerts
-
-var retreived = {a, b, c, d, e, f};
-var parkList= $('park-list>');
-  function testPlacement(retreived){
-    for (var i = 0; retreived.length < 6; i++) {
-      parkList= retreive[i];
-      console.log(parkList);
-    };
-  };
-  testPlacement();
-
-
-// TODO declare & troubleshoot
-
-
-function npsApiCall() {
-    $.ajax({
-        url: "https://developer.nps.gov/api/v1/parks?parkCode=&stateCode=NJ&api_key=wuCQVj3eIqguFjOi2HEN7r2l4IDFb4FD90hGt35N",
-        success: function (response) {
-            console.log(response);
-            var latitude = response.data[0].latitude;
-            var longitude = response.data[0].longitude;
-            console.log(latitude, longitude);
-            mapQuestApiCall(latitude, longitude);
-        }
-    })
-};
-npsApiCall();
-
-//*! LAT & LONGITUDE
-function mapQuestApiCall(x, y) {
-    console.log(x, y)
-    var mapUrl = "https://www.mapquestapi.com/staticmap/v5/map?key=" + MAPQ_API_KEY + "&center=" + x + "," + y + "&zoom=10&type=hyb&size=600,400@2x";
-    console.log(mapUrl)
-};
-
-//testing comments
-=======
     var hours = $("#hours").on("click",);
-    console.log(hours);
+
     var amenities = $("#amenities").on("click",);
-    console.log(amenities);
+
     var alerts = $("#alerts").on("click",);
-    console.log(alerts);
-
-//
     //button click 
-
-
     var MAPQ_API_KEY = "yQcB9Koy5KFxIcWM6GPCjCJ132aiYGhh";
     var getParkBtnEl = $('#get-park-names');
     var parkList = $('#park-list')
-    var  = $('');
     var timeDispEl = $("#time-display");
     var apiKey = "653094733b20fc02dc6f1e6e6b8bf37e";
-    
+
     // TODO declare & troubleshoot
     // TODO: GLOBAL VARIABLES
-    var chosenCity = $("#chosen-city");
 
-    function npsApiCall() {
-        $.ajax({
-            url: "https://developer.nps.gov/api/v1/parks?parkCode=&stateCode=NJ&api_key=wuCQVj3eIqguFjOi2HEN7r2l4IDFb4FD90hGt35N",
-            success: function (response) {
-                console.log(response);
-                var latitude = response.data[0].latitude;
-                var longitude = response.data[0].longitude;
-                console.log(latitude, longitude);
-                mapQuestApiCall(latitude, longitude);
-            }
-        })
-    };
-    npsApiCall();
-
-    //*! LAT & LONGITUDE
-    function mapQuestApiCall(x, y) {
-        console.log(x, y)
-        var mapUrl = "https://www.mapquestapi.com/staticmap/v5/map?key=" + MAPQ_API_KEY + "&center=" + x + "," + y + "&zoom=10&type=hyb&size=600,400@2x";
-        console.log(mapUrl)
-    };
     // *? ALL ABOVE ARE ORIGINAL TO PARKOUT
 
 
     // *! COMPLETED gets selected city CURRENT weather
+
     function getCurrentPark(event) {
         event.preventDefault();
         var city = $("#city-name").val();
@@ -157,20 +79,7 @@ function mapQuestApiCall(x, y) {
                         " uv index: " + uvi
                     );
                     console.log(uvi)
-                    // TODO fetch on uv index then displays color to page
 
-                    // if (uvi <= 2) {
-                    //     document.getElementsByTagName("H1")[0].setAttribute("class", "democlass");
-                    //     uvInd.css({ "background-color": "green" })
-                    // } else if (uvi <= 5) {
-                    //     uvInd.css({ "background-color": "yellow", "color": "black" })
-                    // } else if (uvi <= 7) {
-                    //     uvInd.css({ "background-color": "orange" })
-                    // } else if (uvi <= 10) {
-                    //     uvInd.css({ "background-color": "red" })
-                    // } else if (uvi >= 11) {
-                    //     uvInd.css({ "background-color": "purple" })
-                    // }
                     storeObj = {
                         weather: weather,
                         icon: icon,
@@ -209,5 +118,57 @@ function mapQuestApiCall(x, y) {
 
     setInterval(displayTime, 1000);
     searchParkBtnEl.on("click", getCurrentWeather);
+
+
+
+
+    function npsApiCall(parkNJ) {
+
+
+        var npsKey = "aKdQbl5YRDOdOcAzaiDfbacSBby5NQWEU8s5Mi5D";
+        var npsUrl = `https://developer.nps.gov/api/v1/parks?stateCode=${parkNJ}&api_key=${npsKey}`
+        console.log("my park list: ", npsUrl);
+
+        $.ajax({
+            url: npsUrl,
+            success: function (response) {
+                console.log(response.data);
+                $('#myList').empty();
+                for (let i = 0; i < response.data.length; i++) {
+                    var nameP = response.data[i].fullName;
+                    var latP = response.data[i].latitude;
+                    console.log(latP);
+                    var longP = response.data[i].longitude;
+                    console.log(longP);
+                    var contactP = response.data[i].contacts;
+                    console.log(contactP);
+                    var activitiesP = response.data[i].activities[0];
+                    console.log(activitiesP);
+                    var feesP = response.data[i].entranceFees[0].cost;
+                    console.log(feesP);
+
+                    $('#myList').append('<a class="dropdown-item" href="#">' + nameP + '</a>')
+
+                }
+
+            },
+            error: function (xhr, status, error) {
+                console.log("status: ", status)
+                console.log("error: ", error)
+            },
+            complete: function (xhr, status) {
+                console.log("complete: ", status)
+            }
+        })
+    };
+
+
+
+    //*! LAT & LONGITUDE
+    function mapQuestApiCall(x, y) {
+        console.log(x, y)
+        var mapUrl = "https://www.mapquestapi.com/staticmap/v5/map?key=" + MAPQ_API_KEY + "&center=" + x + "," + y + "&zoom=10&type=hyb&size=600,400@2x";
+        console.log(mapUrl)
+    };
+
 });
->>>>>>> 4ff5df2801ff23b6e36973dfadfb7ccffb962295
