@@ -1,110 +1,74 @@
+/*comments to ssatisfy a push*/
 body {
   font-family:'PT Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
+  color:hsl (32,50%, 12%);
+ 
 }
 
-textarea {
-  background: #76a1a1;
-  border: 2px solid rgb(7, 10, 7);
-  resize: none;
-  color: #000000;
-  border: 1px solid black;
-  padding: 10px;
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color:hsl(32, 50%, 90%);
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  box-shadow: 10px 10px 5px #aaaaaa;
 }
-
-li{
-list-style: none;
+.card-search{
+  border:#4bacb8;
+}
+.jumbotron h1{
+  text-shadow: 2px 2px #151418;
 }
 
 .jumbotron {
   text-align: left;
   background-color:  #5b6f9b;
-  background-image: cover, no-repeat;
-  color: black;
-  border-radius: 0;
-  border-bottom: 10px solid black;
+  color: rgb(187, 209, 240);
+  border-radius: 5;
+  border-bottom: 5px solid rgb(24, 23, 21);
   text-shadow: 2px 2px #151418;
-  color: azure;
-  max-height: 50px; 
+  
+  min-height: 400px;
 }
-.hero{
-  /*background-image: url(../images/DelGapHero1.jpg); */
-  background-image: cover;
+
+.jumbotron h1{
+  margin-top:10%;
+
+}
+.jumbotron-weather {
+  background-image: url(../img/DelGapHeader.jpg);
+  max-width: 100%;
+  background-size: cover;
+  
+}
+
+.bgimage {
+  max-height:600 ;
+  
+  background: url(../img/DelGApHero3.jpg);
   background-repeat: no-repeat;
-  background-size: 100% 50;
   background-position: center;
+  background-size:cover;
+  background-attachment: fixed;
+  color:#fff;
 
 }
-
-#container1 {
-
+.bgimage h5 {
+  color:white;
+  text-shadow:2px 2px #333;
 }
 
-#container3{
-  background-color: rgb(121, 114, 107);
-  margin-top: 10px;
-
-}
-
-#container2{
-  background-color: rgb(224, 202, 180);
-  margin:20 px 0;
-
-}
-
-#response1{
-  border: 3px solid rgb(7, 10, 7);
-}
-
-.time-block {
-  text-align: center;
-  border-radius: 15px;
-}
-
-.row {
-  white-space: pre-wrap;
-  max-height: auto;
-  
-  margin-top: 2%;
-  
-}
-.single{
-  text-align: center;
-}
-
-.hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
-}
-
-
-.saveBtn {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #06aed5;
-  color: white;
-}
-
-.saveBtn i:hover {
-  font-size: 20px;
-  transition: all 0.3s ease-in-out;
-}
-
-.checkboxes ul {
-  margin: 0;
-  padding:0;
-  list-style:none;
-}
-
-.checkboxs li{
-    display:inline-block;
-    width:33.33%;
-    list-style:none;
-}
-
-.hide {
-  display: none;
+.main{
+  background-image:url(../img/DelGapHero1.jpg) ;
+  max-width: 100%;
+  max-height: fit-content;
+  background-size: cover;
 }
