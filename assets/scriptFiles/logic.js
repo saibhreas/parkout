@@ -16,7 +16,7 @@ function displayTime() {
     console.log(present)
 };
 
-//*! LAT & LONGITUDE - Futur enhancement
+//*! LAT & LONGITUDE - Future enhancement
 function mapQuestApiCall(x, y) {
     console.log(x, y)
     var mapUrl = "https://www.mapquestapi.com/staticmap/v5/map?key=" + MAPQ_API_KEY + "&center=" + x + "," + y + "&zoom=10&type=hyb&size=600,400@2x";
@@ -153,5 +153,38 @@ function npsApiCall(parkNJ) {
         }
     })
 };
+
+$(document).ready(function () {
+
+    $("#container1").fadeIn();;
+    $("#container2").fadeIn();;
+    $("#myList").click(function () {
+        $("#container1").fadeOut();;
+        $("#container2").fadeOut();
+        $("#container3").fadeIn();;
+    });
+    $("#hide-weather").click(function () {
+        $("#container1").hide("slow");
+        $("#container2").hide("slow");
+        $("#container3").fadeIn();;
+    });
+    $("#home").click(function () {
+        $("#container0").hide("slow");
+        $("#container1").hide("slow");
+        $("#container2").hide("slow");
+        $("#container3").hide("slow");
+        $("#container4").hide("slow");
+        $("#container5").hide("slow");
+    });
+    $("#getNewPark").click(function () {
+        $("#container1").hide("slow");
+        $("#container2").show("slow");
+        $("#container3").hide("slow");
+        $("#container4").hide("slow");
+        $("#container5").hide("slow");
+    });
+});
+
+
 
 setInterval(displayTime, 1000);
