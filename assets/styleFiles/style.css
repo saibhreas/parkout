@@ -15,8 +15,6 @@ body {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  
-  
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -28,9 +26,7 @@ body {
   border:#4bacb8;
 }
 
-#container3{
-  
-}
+
 
 .header {
   text-align: left;
@@ -87,12 +83,14 @@ color:blanchedalmond;
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 /* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) { ... }
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: @screen-md-min) { ... }
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: @screen-lg-min) { ... }
-@media (max-width: @screen-xs-max) { ... }
-@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { ... }
-@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { ... }
-@media (min-width: @screen-lg-min) { ... }
+
+@media (min-width: 768px) {
+  .col-md {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+  
+}
